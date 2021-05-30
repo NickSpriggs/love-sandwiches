@@ -97,16 +97,27 @@ def update_surplus_worksheet(data):
     surplus_worksheet.append_row(data)
     print("Surplus worksheet updated successfully.\n")
 
+def update_worksheet(data, worksheetName):
+    """
+    Updates the designated sheet with the designated values
+    This is a refactored version of the other two update functions
+    """
+    print(f"Updating {worksheetName} worksheet...\n")
+    worksheet_to_update = SHEET.worksheet(worksheetName)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheetName} worksheet updated succesfully.\n")
+
+
 def main():
     """
     Run all program functions
     """
     data = get_sales_data()
     sales_data = [int(num) for num in data]
-    update_sales_worksheet(sales_data)
+    update_worksheet(sales_data, "sales")
 
     new_surplus = calculate_surplus_data(sales_data)
-    update_surplus_worksheet(new_surplus)
+    update_worksheet(new_surplus, "surplus")
 
 
 print("Welcome to love Sandwiches Data Automation")
