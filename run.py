@@ -16,3 +16,4 @@ sales = SHEET.worksheet('sales')
 
 data = sales.get_all_values()
 print(data)
+#In order to run simply type into the terminal -> python3 run.py
