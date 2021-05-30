@@ -95,6 +95,7 @@ def main():
     sales_data = [int(num) for num in data]
     update_sales_worksheet(sales_data)
     new_surplus = calculate_surplus_data(sales_data)
+    print(new_surplus)
 
 print("Welcome to love Sandwiches Data Automation")
 main()
